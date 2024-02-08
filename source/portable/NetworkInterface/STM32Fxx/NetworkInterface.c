@@ -1509,10 +1509,7 @@ static void prvEMACHandlerTask( void * pvParameters )
 
             #if ( ipconfigSUPPORT_NETWORK_DOWN_EVENT != 0 )
             {
-                if( xGetPhyLinkStatus( pxMyInterface ) == pdFALSE )
-                {
-                    FreeRTOS_NetworkDown( pxMyInterface );
-                }
+                FreeRTOS_NetworkDown( pxMyInterface );
             }
             #endif /* ( ipconfigSUPPORT_NETWORK_DOWN_EVENT != 0 ) */
         }
